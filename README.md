@@ -1,1 +1,1 @@
-# FriendFinder
+This is a preliminary version of the assignment.  Not yet ready for full grading.  Thank you.
