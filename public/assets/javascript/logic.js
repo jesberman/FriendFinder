@@ -23,9 +23,17 @@ $("#submit").on("click", function () {
 
     $.post("/api/friends",
         newMatch, function (response) {
+            console.log("Response:");
             console.log(response);
+            console.log("Name:");            
+            console.log(response.name);
+            console.log("Image: ");
+            console.log(response.image);
 
+            $("#best-match").css("display","inline");
 
+            $("#best-match-name").prepend(response.name);
+            $("#best-match-image").prepend("<img style='width:45vw;' src=assets/images/"+response.image+">")
             //write code that will display the closest friend. use the "response" variable
         })
 

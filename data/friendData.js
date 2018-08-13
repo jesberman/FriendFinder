@@ -2,8 +2,8 @@
 var friends = [
 
     {
-      name: "Ahmed",
-      image: "Ahmeds-picture",
+      name: "Tyrion Lannister",
+      image: "tyrion.jpg",
       questions: ["1","1","1","1","1","1","1","1","1","1"]
     }
   ];
