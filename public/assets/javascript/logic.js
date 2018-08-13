@@ -1,4 +1,6 @@
-var friends = [];
+//require("../../../data/friendData.js");
+
+
 
 
 $("#submit").on("click", function () {
@@ -17,21 +19,17 @@ $("#submit").on("click", function () {
             $('#exampleSelect9').find(":selected").text(),
             $('#exampleSelect10').find(":selected").text()
         ]
-
-
     }
-
-
-
-
 
     $.post("/api/friends",
         newMatch, function (response) {
             console.log(response);
+
+
+            //write code that will display the closest friend. use the "response" variable
         })
 
 
-    
 });
 
 

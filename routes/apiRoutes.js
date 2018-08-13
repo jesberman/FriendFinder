@@ -35,9 +35,29 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
-      friendData.push(req.body);
+    var newMatch = req.body;
+      var bestMatch = {};
+      var leastDifference = 100;
 
-      res.json(true);
+      for(i=0; i<friendData.length; i++) {
+        var potentialMatch = friendData[i];
+        var totalPotentialDifference = 0;
+        for (j=0; j<10; j++){ 
+          var questionDifference = Math.abs(parseInt(newMatch.questions[i]) -parseInt(potentialMatch.questions[i]));
+          
+          totalPotentialDifference+= questionDifference;
+        }  
+        if (totalPotentialDifference < leastDifference) {
+          leastDifference=totalPotentialDifference;
+          bestMatch = potentialMatch;
+
+          
+        }
+
+      }
+      friendData.push(newMatch);
+
+      res.json(bestMatch);
   });
 
   // ---------------------------------------------------------------------------
@@ -46,9 +66,18 @@ module.exports = function(app) {
 
   app.post("/api/clear", function() {
     // Empty out the arrays of data
+    console.log("Req body: " +req.body);
     tableData = [];
     waitListData = [];
 
     console.log(tableData);
   });
+  //app.get("/",function(){
+    //console.log(friendData);
+  
+  //})
+
+
 };
+
+
