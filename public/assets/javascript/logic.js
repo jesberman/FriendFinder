@@ -33,9 +33,12 @@ $("#submit").on("click", function () {
             $("#best-match").css("display","inline");
 
             $("#best-match-name").prepend(response.name);
-            $("#best-match-image").prepend("<img style='width:45vw;' src=assets/images/"+response.image+">")
+            $("#best-match-image").prepend("<img style='height:45vh;' src=assets/images/"+response.image+">")
             //write code that will display the closest friend. use the "response" variable
         })
+
+
+        $("#submit").css("display","none");
 
 
 });
