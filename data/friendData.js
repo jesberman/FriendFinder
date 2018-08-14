@@ -1,4 +1,4 @@
-
+//array that holds the initial person objects that the User will be compared to
 var friends = [
 
     {

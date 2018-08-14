@@ -1,9 +1,6 @@
-//require("../../../data/friendData.js");
-
-
-
-
+//function that activates when the user clicks on the "submit" button on the survey page
 $("#submit").on("click", function () {
+    //declares a new variable equal to what the user inputs on the survey page
     var newMatch = {
         name: $("#name").val(),
         image: $("#image").val(),
@@ -21,6 +18,7 @@ $("#submit").on("click", function () {
         ]
     }
 
+    //posts the newMatch variable to the /api/friends route, and html and css of the page to display the relevant information
     $.post("/api/friends",
         newMatch, function (response) {
             console.log("Response:");
@@ -31,16 +29,9 @@ $("#submit").on("click", function () {
             console.log(response.image);
 
             $("#best-match").css("display","inline");
-
             $("#best-match-name").prepend(response.name);
             $("#best-match-image").prepend("<img style='height:45vh;' src=assets/images/"+response.image+">")
-            //write code that will display the closest friend. use the "response" variable
         })
-
-
+        //hides the submit button, so that the user cannot enter a new answer without refreshing the page
         $("#submit").css("display","none");
-
-
 });
-
-

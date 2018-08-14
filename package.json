@@ -1,5 +1,5 @@
 {
-  "name": "hotrestaurant",
+  "name": "FriendFinder",
   "version": "1.0.1",
   "description": "",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
-  "author": "",
+  "author": "Jesse Berman",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
