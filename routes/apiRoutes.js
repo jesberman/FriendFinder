@@ -19,7 +19,6 @@ module.exports = function(app) {
   //loops designes to determine the best match for the user
   // ---------------------------------------------------------------------------
   app.post("/api/friends", function(req, res) {
-    console.log("anything");
     var newMatch = req.body;
       var bestMatch = {};
       var leastDifference = 100;
